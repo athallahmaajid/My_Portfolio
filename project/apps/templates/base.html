@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  </head>
+    <body>
+    <style media="screen">
+      body{
+        background-color: #16181a;
+        color: gainsboro;
+      }
+      .navbar{
+        background-color: #16181a;
+        margin-left: 10px;
+      }
+      .intro{
+        margin: 5px;
+      }
+      .intro{
+        padding-top: 100px;
+        color: gainsboro;
+      }
+      h1{
+        font-size:60px;
+      }
+      .heading{
+        padding-top: 50px;
+      }
+      .card{
+        width: 11rem;
+        border-radius: 5px;
+        border-color: transparent;
+        text-align: center;
+        background-color: #16181a;
+      }
+      .row{
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .footer {
+          position: fixed;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          background-color: #16181a;
+          color: white;
+          text-align: center;
+          margin-top: 100px;
+          margin-bottom: 20px;
+        }
+      .contact{
+        padding: 20px 40px;
+      }
+      .bottom{
+        text-align: center;
+      }
+    @media only screen and (max-width: 400px) {
+      .card{
+        margin: 0 auto;
+      }
+    }
+  </style>
+   <header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed=top">
+      <a class="navbar-brand" href="#">Maajid</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active"><a class="nav-link" href="{% url 'index' %}">Home<span class="sr-only">(current)</span></a></li>
+              {% if user.is_authenticated %}
+                <li class="nav-item active"><a class="nav-link" href="{% url 'user_logout' %}">Logout</a></li>
+                <li class="nav-item active"><a class="nav-link" href="{% url 'news' %}">News</span></a></li>
+              {% else %}
+                <li class="nav-item active"><a class="nav-link" href="{% url 'user_login' %}">Login</a></li>
+                <li class="nav-item active"><a class="nav-link" href="{% url 'register' %}">Register</a></li>
+              {% endif %}
+          </ul>
+        </div>
+      </nav>
+    </header>
+    {% block body_block %}
+    {% endblock %}
+</body>
+</html>

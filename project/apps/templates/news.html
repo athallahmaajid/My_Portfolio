@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load extras %}
+{% block title %}News{% endblock %}
+{% block body_block %}
+    <style>
+        img{
+            width: auto;
+            height: auto;
+        }
+        @media only screen and (min-width: 400px) {
+          img{
+                width: 512px;
+                height: 325px;
+          }
+        }
+    </style>
+    <div class="container">
+        <h1>Daily Tech News</h1>
+        <div class="row">
+        {% for i in articles %}
+            {% if articles|index:i|divisible:4 %}
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="card" style="width: auto;">
+                            <img src="{{ i|get_item:"urlToImage" }}" class="card-img-top" alt="news image">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ i|get_item:"title" }}</h5>
+                                <p class="card-text">{{ i|get_item:"description" }}</p>
+                            </div>
+                            <ul class="list-group">
+                                <li class="list-group-item" style="background-color: transparent;text-align: center;">Source: {{ i|get_item:"source"|get_item:"name" }}</li>
+                            </ul>
+                            <div class="card-body">
+                                <a href="{{ i|get_item:"url" }}" class="card-link btn btn-outline-primary">Go to article</a>
+                            </div>
+                        </div>
+                    </div>
+            {% else %}
+                <div class="col-sm-6 col-xs-12">
+                    <div class="card" style="width: auto;">
+                        <img src="{{ i|get_item:"urlToImage" }}" class="card-img-top" alt="news image">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ i|get_item:"title" }}</h5>
+                            <p class="card-text">{{ i|get_item:"description" }}</p>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item" style="background-color: transparent;text-align: center;">Source: {{ i|get_item:"source"|get_item:"name" }}</li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="{{ i|get_item:"url" }}" class="card-link btn btn-outline-primary">Go to article</a>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock body_block %}

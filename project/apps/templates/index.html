@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home Page{% endblock %}
+{% block body_block %}
+    <main role="main">
+      <div class="container">
+        <div class="intro animate__animated animate__fadeInDown">
+          <h1>Hello I am Maajid,</h1>
+          <h1>a Programmer from <span style="color: red;">Indonesia</span></h1>
+          <a href="https://github.com/athallahmaajid" class="white"><button class="btn btn-outline-primary" style="padding: 15px 35px;margin-top: 15px;">Projects</button></a>
+        </div>
+      </div>
+      <div class="skills">
+      <div class="container">
+        <div class="heading">
+          <h3>My Skills:</h3>
+        </div>
+        <div class="row">
+          <div class="col-sm-4 col-xs-12">
+           <div class="card">
+              <img src="{% static 'python.png'%}" class="card-img-top" alt="Python image">
+              <div class="card-body">
+                <p class="card-text" style="text-align: center;">Python</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-12">
+          <div class="card">
+            <img src="{% static 'HTML.png'%}" class="card-img-top" alt="HTML image">
+            <div class="card-body">
+              <p class="card-text" style="text-align: center;">Html</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+          <div class="card">
+            <img src="{% static 'CSS.png'%}" class="card-img-top" alt="CSS image">
+            <div class="card-body">
+              <p class="card-text" style="text-align: center;">CSS</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+          <div class="card">
+            <img src="{% static 'DJANGO.png'%}" class="card-img-top" alt="Django image">
+            <div class="card-body">
+              <p class="card-text" style="text-align: center;">Django</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+          <div class="card">
+            <img src="{% static 'postgres_1.png'%}" class="card-img-top" alt="postgres image">
+            <div class="card-body">
+              <p class="card-text" style="text-align: center;">PostgreSQL</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+          <div class="card">
+            <img src="{% static 'git.png'%}" class="card-img-top" alt="git image">
+            <div class="card-body">
+              <p class="card-text" style="text-align: center;">Git</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <footer>
+        <div class="container">
+        <div class="top">
+          <div class="contact">
+            <h2>Contact me with:</h2>
+            <div class="row">
+              <div class="col-sm-2">
+                <a href="mailto:athallahmaajid@gmail.com?subject=Hello Maajid"><img src="{% static 'mail_1.png' %}" alt="mail"></a>
+              </div>
+              <div class="col-sm-2">
+                <a href="https://github.com/athallahmaajid" target="_blank"><img src="{% static 'github.png' %}" alt="github"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bottom">
+          <p>@2021 by Maajid</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  </main>
+{% endblock %}
