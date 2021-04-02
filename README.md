@@ -13,18 +13,15 @@ Then enter the postgres shell with:
 sudo -iu postgres
 psql
 ```
-Create the User with:
+Create the User and Database with:
 
 ```
+CREATE DATABASE yourdbname;
 CREATE USER youruser WITH ENCRYPTED PASSWORD 'yourpass';
 GRANT ALL PRIVILEGES ON DATABASE yourdbname TO youruser;
 ```
-Create the Database with:
-```
-CREATE DATABASE yourdbname;
-```
 
-configure in project/project/settings.py:
+setup the settings in project/project/settings.py:
 ```
 DATABASES = {
     'default': {
