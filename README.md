@@ -42,7 +42,7 @@ $ cd My_Portfolio
 Create a virtual environment to install dependencies in and activate it:
 
 ```
-$ virtualenv2 --no-site-packages env
+$ virtualenv --no-site-packages env
 $ source env/bin/activate
 ```
 
