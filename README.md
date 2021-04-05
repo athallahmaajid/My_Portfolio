@@ -59,7 +59,7 @@ Note the `(env)` in front of the prompt. This indicates that this terminal sessi
 ```
 (env)$ cd project
 (env)$ python3 manage.py migrate
-(env)$ python3 manage.py makemigrations
+(env)$ python3 manage.py makemigrations apps
 (env)$ python3 manage.py migrate
 (env)$ python manage.py runserver
 ```
