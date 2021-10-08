@@ -49,7 +49,7 @@ $ source env/bin/activate
 Then install the dependencies:
 
 ```
-(env)$ pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 Note the `(env)` in front of the prompt. This indicates that this terminal session operates in a virtual environment set up by virtualenv2.
@@ -57,11 +57,11 @@ Note the `(env)` in front of the prompt. This indicates that this terminal sessi
  `pip` has finished downloading the dependencies:
 
 ```
-(env)$ cd project
-(env)$ python3 manage.py migrate
-(env)$ python3 manage.py makemigrations apps
-(env)$ python3 manage.py migrate
-(env)$ python manage.py runserver
+cd project
+python3 manage.py migrate
+python3 manage.py makemigrations apps
+python3 manage.py migrate
+python manage.py runserver
 ```
 
 And navigate to `http://127.0.0.1:8000/`.
